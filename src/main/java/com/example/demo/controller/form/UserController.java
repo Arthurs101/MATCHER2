@@ -22,7 +22,7 @@ public class UserController {
     
     private PersonDTO personDTO;//usuario actual
     private Warning warnin = new Warning();
-    private final NE4JDB base = new NE4JDB("bolt://localhost:11004","neo4j","1234");
+    private final NE4JDB base = new NE4JDB("bolt://100.26.1.229:7687","neo4j","towel-directories-methods");
 
     @GetMapping("/user/new")
     public ModelAndView newUser(){//registrar nuevo usuario
