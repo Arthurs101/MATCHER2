@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  <!--caracteres especiales-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
+    <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
+    <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+</head>
+<body>
+        <div class="grid-container2">
+            <div class="grid-item">
+                <table id="tablestyle">
+                    <caption>Que Cualidades te Gustan?</caption>
+                      <tr th:each="quality: ${listQuality}">
+                        <td th:text="${quality.name}">
+                            <td>
+                                <a th:href="@{addlikes/} + ${quality.name}"> <!-- Agregar relacion de gusto -->
+                                  <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                                </a>
+                              </td>
+                        </td>
+                      </tr>
+                      
+                    </table>
+            </div>
+            <div class="grid-item">
+                <table id="tablestyle">
+                    <caption>Con cuales cualidades te identificas?</caption>
+                      <tr th:each="quality: ${listQuality2}">
+                        <td th:text="${quality.name}">
+                            <td>
+                                <a th:href="@{addhas/} + ${quality.name}">  <!-- Agregar relacion de poseer -->
+                                  <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                                </a>
+                              </td>
+                        </td>
+                      </tr>
+                      
+                    </table>
+            </div>
+            <div class="grid-item">
+              <table id="tablestyle">
+                  <caption>Selecciona tu departamento</caption>
+                  <tr th:if="${listPlaces.empty}">
+                    <td colspan="2"> Seleccion Realizada </td>
+                </tr>
+                    <tr th:each="place: ${listPlaces}"> 
+                      <td th:text="${place.name}">
+                          <td>
+                              <a th:href="@{lives/} + ${place.name}">  <!-- Agregar relacion de poseer -->
+                                <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                              </a>
+                            </td>
+                      </td>
+                    </tr>
+                    
+                  </table>
+           </div>
+          <div class="grid-item">
+            <table id="tablestyle">
+                <caption>Selecciona tu sexo</caption>
+                <tr th:if="${listGender.empty}">
+                  <td colspan="2"> Seleccion Realizada </td>
+              </tr>
+                  <tr th:each="gender: ${listGender}"> 
+                    <td th:text="${gender.name}">
+                        <td>
+                            <a th:href="@{is/} + ${gender.name}">  <!-- Agregar relacion de poseer -->
+                              <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                            </a>
+                          </td>
+                    </td>
+                  </tr>
+                  
+                </table>
+        </div>
+        <div class="grid-item">
+          <table id="tablestyle">
+            <caption>Te Interesan</caption>
+            <tr th:if="${listGender2.empty}">
+              <td colspan="2"> Seleccion Realizada </td>
+          </tr>
+              <tr th:each="gender: ${listGender2}"> 
+                <td th:text="${gender.name}">
+                    <td>
+                        <a th:href="@{wants/} + ${gender.name}">  <!-- Agregar relacion de poseer -->
+                          <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                        </a>
+                      </td>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div class="grid-item">
+          <a href="/user/endsave"><button type="button" class="btn" id = "register">Finalizar</button></a>
+        </div>
+        <div class="grid-item">
+          <div th:object="${warning}" >
+            <td th:text="${warning.error}">
+          </div> 
+        </div>
+      </div>
+</body>
+</html>

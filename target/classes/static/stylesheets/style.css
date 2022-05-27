@@ -1,0 +1,75 @@
+.logintext{
+    color: red;
+    font-size: large;
+    font-style: italic;
+    font-kerning: auto;
+}
+.form-control{
+    border: none;
+    border-bottom: 2px solid rgb(255, 185, 150);
+    padding: 2px;
+    margin: 10px;
+}
+.loginContainer{
+    padding: 20px;
+    margin: 10px;
+}
+.btn{
+    padding: 20px;
+    margin : 10px;
+    border-radius: 40%;
+   
+}
+.mainBK{
+    position: relative;
+    height: 100%;
+
+}
+#login{
+    background-color: rgb(255, 67, 67);
+    color: white;
+    border-color: rgb(255, 67, 67);
+    
+}
+#register{
+    background-color: white;
+    color: rgb(255, 67, 67);
+    border-color: white;
+}
+.col2{
+    background-color: rgb(0, 0, 0);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-item {
+    margin: none;
+    font-size: 30px;
+    text-align: center;
+    height: 100%;
+  }
+  .grid-item2{
+    margin: 40px;
+    font-size: 30px;
+    text-align: center;
+    height: 100%;
+  }
+  body{
+      position: absolute;
+      height: 100%;
+  }
+  fieldset {
+    border: rgb(255, 185, 150);
+    border-style: solid;
+    width: fit-content;
+}

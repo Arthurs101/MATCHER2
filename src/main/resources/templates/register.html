@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  <!--caracteres especiales-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
+    <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
+    <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+</head>
+<script>function validateForm() {
+  var x = document.forms["form"]["name"].value;
+  if (x == "") {
+      alert("Name must be filled out");
+      return false;
+  }
+}</script>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="/media/lbck.png" alt = "match" class = "mainBK">
+        </div>
+        <div class="grid-item">
+         <!-- FORMULARIO-->
+         <legend> Formulario de Registro</legend>
+         <!-- cuerpo del formulario --> 
+         <fieldset>
+          <form id = "form" th:action="@{/user/save}" method = "POST" th:object = "${person}">
+            <center>
+              <tr>
+                <td><label for="user">Usuario</label></td>
+                <td><input class= "form-control" type="text" size="25" th:field="*{username}"></td>
+              </tr>
+              <tr>
+                <td><label for="nombre">Nombre</label></td>
+                <td><input class= "form-control" type="text" size="25" th:field="*{name}"></td>
+              </tr>
+              <tr>
+                <td><label for="nombre">Contraseña</label></td>
+                <td><input class= "form-control" type="password" size="25" th:field="*{password}"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input class="button" type="submit" value="save"></td>
+              </tr>
+              <div th:object="${warning}" >
+                <td th:text="${warning.error}">
+              </div> 
+            </center>
+            </form>
+            
+        </fieldset>
+
+        </div>
+      </div>
+</body>
+</html>

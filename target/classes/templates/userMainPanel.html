@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  <!--caracteres especiales-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
+    <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
+    <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+</head>
+<body>
+    <h1>Match and Mate</h1>
+    <img th:src="@{/media/jtl_logo.png}">  <!-- Aqui iria el logo de la pagina-->
+    <br><br>
+    <div><a href="/user/recomendation"><button class="button">Amistades Recomendadas</button></a>&nbsp;<a href="/user/friends"><button class="button">Amigoss</button></a>&nbsp;<a href="/user/logout"><button class="button">Salir</button></a><div>
+    <br>
+    <table id="tablestyle">
+      <caption>Personas Recomendadas Para TI</caption>
+      <tr>
+        <th>foto</th>
+        <th>usuario</th>
+        <th>nombre</th>
+      </tr>
+        <tr th:each="role: ${listRoles}">
+          <td>
+            <img th:src="@{/media/icon.jpg}" witdh="15px" height="15px" alt="picture">
+          </td>
+          <td th:text="${role.username}">
+            <td th:text="${role.name}"></td>
+            <td>
+              <a th:href="@{addrecomend/} + ${role.username}"> <!-- Aceptar solicitud -->
+                <img th:src="@{/media/edit.png}" witdh="15px" height="15px" alt="aceptar">
+              </a>
+            </td>
+            <td>
+              <a th:href="@{deleterecomend/} + ${role.username}"> <!-- eliminar Persona-->
+                <img th:src="@{/media/delete.png}" witdh="15px" height="15px" alt="eliminar">
+              </a>
+          </td>
+        </tr>
+    </table>
+</body>
+</html>
