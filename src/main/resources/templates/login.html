@@ -6,34 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
     <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
     <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
-    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+    <link rel="stylesheet" href="C:\Users\Abner Garcia\Desktop\paginaprueba\static\stylesheets/style.css"> <!--estio de la p´+agina con css-->
 </head>
-<body>
+<body bgcolor="gray">
     <div class="grid-container">
         <div class="grid-item">
-            <img src="/media/lbck.png" alt = "match" class = "mainBK">
+            <img src="C:\Users\Abner Garcia\Desktop\paginaprueba\static\media\amo.jpg" alt = "match" class = "mainBK">
         </div>
         <div class="grid-item">
          <!-- FORMULARIO-->
-         <legend> IniciarSesion</legend>
+	 <br>
+         <br>
+	 <br>
+         <h1><legend> Iniciar Sesion</legend></h1>
          <fieldset>
           <form id = "form" th:action="@{/user/login}" method = "POST" th:object = "${person}"  >
             <center>
               <tr>
-                <td><label for="user">Usuario</label></td>
-                <td><input class= "form-control" type="text" size="25" th:field="*{username}"></td>
+                <b><td><label for="user">Usuario</label></td></b>
+                <td><input class= "form-control" type="text" size="55" th:field="*{username}"></td>
+		<br>
               </tr>
               <tr>
-                <td><label for="nombre">Contraseña</label></td>
-                <td><input class= "form-control" type="password" size="25" th:field="*{password}"></td>
+		<br>
+                <b><td><label for="nombre">Contraseña</label></td></b>
+                <td><input class= "form-control" type="password" size="55" th:field="*{password}"></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
-                <td><input class="button" type="submit" value="login"></td>
+		<br>
+		<br>
+                <td><input class="button" type="submit" value="Iniciar Sesion"></td>
               </tr>
               <div th:object="${warning}" >
                 <td th:text="${warning.error}">
-              </div> 
+	      </div> 
             </center>
             </form>
             

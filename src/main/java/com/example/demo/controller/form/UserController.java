@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
-import lombok.var;
-
 @Controller
 @RestController
 public class UserController {
@@ -26,7 +23,7 @@ public class UserController {
 
     @GetMapping("/user/new")
     public ModelAndView newUser(){//registrar nuevo usuario
-        var params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         PersonDTO user = new PersonDTO();
         params.put("person", user);
         params.put("warning", this.warnin);
@@ -63,7 +60,7 @@ public class UserController {
     }
     @GetMapping("/user/Register2nd")
     public ModelAndView Register2nd(){
-        var params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("listQuality",base.getQUALITIESNOTLIKED(this.personDTO.getUsername()));
         params.put("listQuality2",base.getQUALITIESNOTHAS(this.personDTO.getUsername()));
         params.put("listPlaces",base.getPlaces(this.personDTO.getUsername()));
@@ -127,7 +124,7 @@ public class UserController {
 
     @GetMapping("/user/sign")
     public ModelAndView logUser(){//inicar sesion
-        var params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         PersonDTO user = new PersonDTO();
         params.put("person", user);
         params.put("warning", this.warnin);
@@ -162,7 +159,7 @@ public class UserController {
         if(this.personDTO.empty()){
             this.personDTO.setTeammates(base.getRecomendations(this.personDTO.getUsername()));
         }
-        var params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("listRoles", this.personDTO.getTeammates() );
         return new ModelAndView("userMainPanel", params);
     }
@@ -186,7 +183,7 @@ public class UserController {
     }
     @GetMapping("/user/friends")
     public ModelAndView friends(){
-        var params = new HashMap<String, Object>();
+        HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("listRoles", base.getFriends(this.personDTO.getUsername()) );
         return new ModelAndView("userFriendships",params);
     }

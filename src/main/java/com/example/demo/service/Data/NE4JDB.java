@@ -416,7 +416,7 @@ public void addFriend(String username1, String username2){
                     PersonDTO usertemp = new PersonDTO(reco.get(i).get("p.username").asString(),reco.get(i).get("p.name").asString());
                     tmp.add(usertemp);
                 }
-                result = tx.run( "MATCH (q:Person{username: \"" + username + "\"})-[:LIKES]->(:QUALITY)<-[:HAS]-(p:Person)  Where (q)-[:LIVES]->(:PLACE)<-[:LIVES]-(p) and not p.username = q.username and not (q)-[:KNOWS]->(p) RETURN DISTINCT  p.name, p.username LIMIT 10");
+                result = tx.run( "MATCH (q:Person{username: \"" + username + "\"})-[:LIKES]->(:QUALITY)<-[:HAS]-(p:Person)  Where (q)-[:LIVES]->(:PLACE)<-[:LIVES]-(p) and (q)-[:WANTS]->(:GENDER)<-[:IS]-(p) and not p.username = q.username and not (q)-[:KNOWS]->(p) RETURN DISTINCT  p.name, p.username LIMIT 10");
                 reco = result.list(); //lista de coincidencias
                 for (int i = 0; i <reco.size(); i++){
                     PersonDTO usertemp = new PersonDTO(reco.get(i).get("p.username").asString(),reco.get(i).get("p.name").asString());

@@ -6,8 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
     <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
     <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
-    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+    <link rel="stylesheet" href="/stylesheets/style.csss"> <!--estio de la p´+agina con css-->>
+    <style>
+      .logintext{
+    color: red;
+    font-size: large;
+    font-style: italic;
+    font-kerning: auto;
+}
+.form-control{
+    border: none;
+    border-bottom: 2px solid rgb(255, 185, 150);
+    padding: 2px;
+    margin: 10px;
+}
+.loginContainer{
+    padding: 20px;
+    margin: 10px;
+}
+.btn{
+    padding: 20px;
+    margin : 10px;
+    border-radius: 40%;
+   
+}
+.mainBK{
+    position: relative;
+    height: 100%;
+
+}
+#login{
+    background-color: rgb(255, 67, 67);
+    color: white;
+    border-color: rgb(255, 67, 67);
+    
+}
+#register{
+    background-color: white;
+    color: rgb(255, 67, 67);
+    border-color: white;
+}
+.col2{
+    background-color: rgb(0, 0, 0);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-item {
+    margin: none;
+    font-size: 30px;
+    text-align: center;
+    height: 100%;
+  }
+  body{
+      position: absolute;
+      height: 100%;
+  }
+  fieldset {
+    border: rgb(255, 185, 150);
+    border-style: solid;
+    width: fit-content;
+}
+    </style>
 </head>
+
+
 <script>function validateForm() {
   var x = document.forms["form"]["name"].value;
   if (x == "") {
@@ -15,10 +88,14 @@
       return false;
   }
 }</script>
-<body>
+
+
+
+<body bgcolor="Grey">
+  
     <div class="grid-container">
         <div class="grid-item">
-            <img src="/media/lbck.png" alt = "match" class = "mainBK">
+            <img src="/media/hearts1.png" alt = "match" class = "mainBK">
         </div>
         <div class="grid-item">
          <!-- FORMULARIO-->
@@ -27,6 +104,7 @@
          <fieldset>
           <form id = "form" th:action="@{/user/save}" method = "POST" th:object = "${person}">
             <center>
+              
               <tr>
                 <td><label for="user">Usuario</label></td>
                 <td><input class= "form-control" type="text" size="25" th:field="*{username}"></td>

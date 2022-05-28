@@ -42,7 +42,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     margin: none;
     height: 100%;
   }
@@ -54,12 +54,6 @@
   }
   .grid-item {
     margin: none;
-    font-size: 30px;
-    text-align: center;
-    height: 100%;
-  }
-  .grid-item2{
-    margin: 40px;
     font-size: 30px;
     text-align: center;
     height: 100%;

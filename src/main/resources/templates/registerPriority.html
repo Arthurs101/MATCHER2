@@ -6,9 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--descripcion de tamaño de la pantalla, que sea del mismo tamaño de la pantalla-->
     <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
     <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
-    <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+    <link rel="stylesheet" href="../static/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
+    <style>
+      .logintext{
+    color: red;
+    font-size: large;
+    font-style: italic;
+    font-kerning: auto;
+}
+.form-control{
+    border: none;
+    border-bottom: 2px solid rgb(255, 185, 150);
+    padding: 2px;
+    margin: 10px;
+}
+.loginContainer{
+    padding: 20px;
+    margin: 10px;
+}
+.btn{
+    padding: 20px;
+    margin : 10px;
+    border-radius: 40%;
+   
+}
+.mainBK{
+    position: relative;
+    height: 100%;
+
+}
+#login{
+    background-color: rgb(255, 67, 67);
+    color: white;
+    border-color: rgb(255, 67, 67);
+    
+}
+#register{
+    background-color: white;
+    color: rgb(255, 67, 67);
+    border-color: white;
+}
+.col2{
+    background-color: rgb(0, 0, 0);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: none;
+    height: 100%;
+  }
+  .grid-item {
+    margin: none;
+    font-size: 30px;
+    text-align: center;
+    height: 100%;
+  }
+  body{
+      position: absolute;
+      height: 100%;
+  }
+  fieldset {
+    border: rgb(255, 185, 150);
+    border-style: solid;
+    width: fit-content;
+}
+    </style>
 </head>
-<body>
+
+
+<body bgcolor="Grey">
         <div class="grid-container2">
             <div class="grid-item">
                 <table id="tablestyle">
@@ -17,7 +90,8 @@
                         <td th:text="${quality.name}">
                             <td>
                                 <a th:href="@{addlikes/} + ${quality.name}"> <!-- Agregar relacion de gusto -->
-                                  <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                                  <img src="/media/love.jpg" witdh="30px" height="30px" alt="love.jpg">
+
                                 </a>
                               </td>
                         </td>
@@ -32,7 +106,7 @@
                         <td th:text="${quality.name}">
                             <td>
                                 <a th:href="@{addhas/} + ${quality.name}">  <!-- Agregar relacion de poseer -->
-                                  <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                                  <img src="/media/hearts1.png" witdh="30px" height="30px" alt="love.jpg">
                                 </a>
                               </td>
                         </td>
@@ -50,7 +124,7 @@
                       <td th:text="${place.name}">
                           <td>
                               <a th:href="@{lives/} + ${place.name}">  <!-- Agregar relacion de poseer -->
-                                <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                                <img src="/media/people.jpeg" witdh="30px" height="30px" alt="love.jpg">
                               </a>
                             </td>
                       </td>
@@ -68,7 +142,7 @@
                     <td th:text="${gender.name}">
                         <td>
                             <a th:href="@{is/} + ${gender.name}">  <!-- Agregar relacion de poseer -->
-                              <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                              <img src="/media/gang.jpg" witdh="30px" height="30px" alt="love.jpg">
                             </a>
                           </td>
                     </td>
@@ -86,7 +160,7 @@
                 <td th:text="${gender.name}">
                     <td>
                         <a th:href="@{wants/} + ${gender.name}">  <!-- Agregar relacion de poseer -->
-                          <img th:src="@{/images/add.png}" witdh="15px" height="15px" alt="add">
+                          <img src="/media/book.jpg" witdh="30px" height="30px" alt="love.jpg">
                         </a>
                       </td>
                 </td>
