@@ -198,6 +198,15 @@ public class UserController {
         this.personDTO = null; //eliminar informacion de sesion temporal}
         return new ModelAndView ("main"); //regresar a inicio de sesion :p
     }
+    @GetMapping("")
+    public ModelAndView main(){
+        return new ModelAndView("main");
+    }
+    @GetMapping("/error")
+    public ModelAndView error(){
+        this.personDTO = null;
+        return new ModelAndView("main");
+    }
     
 }
     

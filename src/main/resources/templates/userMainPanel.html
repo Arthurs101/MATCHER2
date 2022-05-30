@@ -8,105 +8,33 @@
     <meta name = "--descripcion" content="primera página"> <!--descripcion de la pagina-->
     <meta name = "robots" content="index, follow"> <!--permitir que los bots muestren la página-->
     <link rel="stylesheet" href="/stylesheets/style.css"> <!--estio de la p´+agina con css-->>
-    <style>
-      .logintext{
-    color: red;
-    font-size: large;
-    font-style: italic;
-    font-kerning: auto;
-}
-.form-control{
-    border: none;
-    border-bottom: 2px solid rgb(255, 185, 150);
-    padding: 2px;
-    margin: 10px;
-}
-.loginContainer{
-    padding: 20px;
-    margin: 10px;
-}
-.btn{
-    padding: 20px;
-    margin : 10px;
-    border-radius: 40%;
-   
-}
-.mainBK{
-    position: relative;
-    height: 100%;
-
-}
-#login{
-    background-color: rgb(255, 67, 67);
-    color: white;
-    border-color: rgb(255, 67, 67);
     
-}
-#register{
-    background-color: white;
-    color: rgb(255, 67, 67);
-    border-color: white;
-}
-.col2{
-    background-color: rgb(0, 0, 0);
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin: none;
-    height: 100%;
-  }
-  .grid-container2 {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    margin: none;
-    height: 100%;
-  }
-  .grid-item {
-    margin: none;
-    font-size: 30px;
-    text-align: center;
-    height: 100%;
-  }
-  body{
-      position: absolute;
-      height: 100%;
-  }
-  fieldset {
-    border: rgb(255, 185, 150);
-    border-style: solid;
-    width: fit-content;
-}
-    </style>
 </head>
-<body>
-    <h1>Match and Mate</h1>
-    <img th:src="@{/media/jtl_logo.png}">  <!-- Aqui iria el logo de la pagina-->
+<body style="background-color:rgb(0, 0, 0);">    
     <br><br>
-    <div><a href="/user/recomendation"><button class="button">Amistades Recomendadas</button></a>&nbsp;<a href="/user/friends"><button class="button">Amigoss</button></a>&nbsp;<a href="/user/logout"><button class="button">Salir</button></a><div>
+    <div><a href="/user/recomendation"><button class="button" style="background-color:red;width:485px;height:50px;" >Amistades Recomendadas</button></a>&nbsp;<a href="/user/friends"><button class="button" style="background-color:red; width:485px;height:50px; ">Amigos</button></a>&nbsp;<a href="/user/logout"><button class="button" style="background-color:red;width:485px;height:50px;">Salir </button></a><div>
     <br>
     <table id="tablestyle">
-      <caption>Personas Recomendadas Para TI</caption>
+      <caption class="big-font">Personas Recomendadas Para TI</caption>
       <tr>
-        <th>foto</th>
-        <th>usuario</th>
-        <th>nombre</th>
+        <th class="big-font">foto</th>
+        <th class="big-font">usuario</th>
+        <th class="big-font">nombre</th>
       </tr>
         <tr th:each="role: ${listRoles}">
           <td>
-            <img th:src="@{/media/icon.jpg}" witdh="15px" height="15px" alt="picture">
+            <img th:src="@{/media/icon.jpg}" witdh="30px" height="30px" alt="picture" class="profile">
           </td>
-          <td th:text="${role.username}">
-            <td th:text="${role.name}"></td>
+          <td th:text="${role.username}" class="big-font">
+            <td  class="big-font" th:text="${role.name}"></td>
             <td>
               <a th:href="@{addrecomend/} + ${role.username}"> <!-- Aceptar solicitud -->
-                <img th:src="@{/media/edit.png}" witdh="15px" height="15px" alt="aceptar">
+                <img src="/media/aceptar.png" witdh="30px" height="30px" alt="aceptar">
               </a>
             </td>
             <td>
               <a th:href="@{deleterecomend/} + ${role.username}"> <!-- eliminar Persona-->
-                <img th:src="@{/media/delete.png}" witdh="15px" height="15px" alt="eliminar">
+                <img src="/media/eliminar.png" witdh="30px" height="30px" alt="eliminar">
               </a>
           </td>
         </tr>
