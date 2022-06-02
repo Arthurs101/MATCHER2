@@ -202,12 +202,7 @@ public class UserController {
     public ModelAndView main(){
         return new ModelAndView("main");
     }
-    @GetMapping("/error")
-    public ModelAndView error(){
-        this.personDTO = null;
-        return new ModelAndView("main");
-    }
-    
+       
 }
     
 
