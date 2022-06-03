@@ -357,7 +357,7 @@ public void addFriend(String username1, String username2){
                 @Override
             public List<PersonDTO> execute (Transaction tx)
             {
-                Result result = tx.run( "MATCH (:Person{username: \"" + username + "\"})-[:KNOWS]->(p:Person) RETURN p.name, p.username");
+                Result result = tx.run( "MATCH (:Person{username: \"" + username + "\"})-[:KNOWS]->(p:Person) RETURN DISTINCT p.name, p.username");
                 List<Record> reco = result.list(); //lista de coincidencias
                 List<PersonDTO> tmp = new ArrayList<>();
                 for (int i = 0; i <reco.size(); i++){
